@@ -25,7 +25,7 @@ function multifile_array()
     $all_files = $_FILES['f_file']['name'];
     $i = 0;
     
-    foreach ($all_files as $filename) {
+    foreach ((array)$all_files as $filename) {
         $files[++$i]['name'] = $filename;
         $files[$i]['type'] = current($_FILES['f_file']['type']);
         next($_FILES['f_file']['type']);
